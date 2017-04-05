@@ -50,6 +50,7 @@
             <ul>
             {% if representatives.website %}<li><a href="{{ representatives.website }}"><strong><u>Website</u></strong></a></li>{% endif %}
             {% for phone-numbers in representatives.phone-numbers %}
+              {% unless phone-numbers[0] contains "office-name" %}
               <li>
                 <small>{{ phone-numbers[0] }}</small><br><strong>{{ phone-numbers.[1] }}</strong>
               </li>
